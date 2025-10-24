@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Телефонные номера</title>
+</head>
+<body>
+    <h1>Список телефонных номеров</h1>
+    <form action="/search" method="post">
+        <input type="text" name="search_query" placeholder="Введите номер или текст">
+        <button type="submit">Поиск</button>
+    </form>
+    <ul>
+        {% for number in numbers %}
+            <a href="{{ url_for('phone_detail', number=number )}}">+{{number}}</a>
+        {% endfor %}
+    </ul>
+</body>
+</html>
